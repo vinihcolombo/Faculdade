@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <locale.h>
 
-int vet[21] = {36,24,25,26,2,45,45,47,7,26,26,10,34,33,28,50,28,41,27,34};  //Inicializar o vetor como vari·vel global
-void imprimirVetor(int tamanho);											//para poder us·-lo em funÁıes
+int vet[21] = {36,24,25,26,2,45,45,47,7,26,26,10,34,33,28,50,28,41,27,34};  	//Inicializar o vetor como vari√°vel global
+void imprimirVetor(int tamanho);						//para poder us√°-lo em fun√ß√µes
 void bubbleSort (int tamanho);
 void selectionSort (int tamanho);
 void insertionSort (int tamanho);
@@ -13,7 +13,7 @@ int main()
 	int valor, i, escolha;
 	setlocale(LC_ALL, "Portuguese");
 	
-	printf("Que tipo de ordenaÁ„o vocÍ quer fazer? ");
+	printf("Que tipo de ordena√ß√£o voc√™ quer fazer? ");
 	printf("\n1 - Selection Sort\n2 - Bubble Sort\n3 - Insertion Sort\n0 - Sair\n");
 	scanf("%d", &escolha);
 	
@@ -31,7 +31,7 @@ int main()
 		case 0:
 			break;
 		default: 
-			printf("Escolha inv·lida! ");
+			printf("Escolha inv√°lida! ");
 			break;
 	}
 	
@@ -46,7 +46,7 @@ void imprimirVetor(int tamanho)
 	printf("\n\nValores do Vetor: \n");
 	for (i = 0;i < tamanho; i++)
 	{
-		printf("%d  ", vet[i]);  // Pular linha apÛs 10 caracteres para ser possÌvel visualizar no console.
+		printf("%d  ", vet[i]);  	// Pular linha ap√≥s 10 caracteres para ser poss√≠vel visualizar no console.
 		if (i % 10 == 0 && i != 0) printf("\n");
 	}
 }
@@ -58,10 +58,10 @@ void bubbleSort (int tamanho)
 	{
 		for (j = 0;j < tamanho - i; j++)
 		{
-			if (vet[j] > vet[j+1])	//
-			{						//	Se a posiÁ„o atual for maior que a prÛxima posiÁ„o
-				tmp = vet[j];		//	vamos troc·-las antes de continuar a leitura das
-				vet[j] = vet[j+1];	//	outras posiÁıes.
+			if (vet[j] > vet[j+1])		//
+			{				//	Se a posi√ß√£o atual for maior que a pr√≥xima posi√ß√£o
+				tmp = vet[j];		//	vamos troc√°-las antes de continuar a leitura das
+				vet[j] = vet[j+1];	//	outras posi√ß√µes.
 				vet[j+1] = tmp;		//
 			}	
 		}
@@ -74,16 +74,16 @@ void selectionSort (int tamanho)
 	
 	for (i = 0; i < tamanho - 1; i++)
 	{
-		menor = i; //Atribue ‡ vari·vel menor a primeira posiÁ„o que ser· comparada com as outras para n„o termos erros
+		menor = i; 	//Atribue √† vari√°vel menor a primeira posi√ß√£o que ser√° comparada com as outras para n√£o termos erros
 		for (j = i + 1; j < tamanho; j++)
 		{
-			if (vet[j] < vet[menor]) //Se acharmos algo menor que o vetor na posiÁ„o "menor", substituÌmos a vari·vel por j
+			if (vet[j] < vet[menor]) 	//Se acharmos algo menor que o vetor na posi√ß√£o "menor", substitu√≠mos a vari√°vel por j
 			{
 				menor = j;
 			}
 		}
 		tmp = vet[i];		//
-		vet[i] = vet[menor];// Trocando a "posiÁ„o base" com a menor encontrada
+		vet[i] = vet[menor];	// Trocando a "posi√ß√£o base" com a menor encontrada
 		vet[menor] = tmp;	//
 	}
 }
@@ -96,11 +96,11 @@ void insertionSort (int tamanho)
 	{
 		j = i;
 		while (vet[j] < vet[j-1] && j > 0)	//
-		{									//
-			tmp = vet[j];					//Looping que verifica se a posiÁ„o atual È menor que a posiÁ„o anterior.
-			vet[j] = vet[j-1];				//Caso seja menor e j seja maior que 0, vamos troc·-las. 
-			vet[j-1] = tmp;					//
-			j--;							//
+		{					//
+			tmp = vet[j];			//Looping que verifica se a posi√ß√£o atual √© menor que a posi√ß√£o anterior.
+			vet[j] = vet[j-1];		//Caso seja menor e j seja maior que 0, vamos troc√°-las. 
+			vet[j-1] = tmp;			//
+			j--;				//
 		}
 	}
 }
